@@ -1,0 +1,37 @@
+apply from: file("${rootDir}/gradle/project.gradle")
+subprojects {
+    group = 'demo'
+    version = '1.0.0'
+
+    repositories {
+        mavenLocal()
+        maven
+                {
+                    url "http://maven.aliyun.com/nexus/content/groups/public/"
+                }
+    }
+}
+
+def coreNGVersion = '7.3.0'
+
+
+configure(subprojects.findAll { it.name.matches('.*-interface') }) {
+    dependencies {
+        implementation "core.framework:core-ng-api:${coreNGVersion}"
+    }
+}
+
+configure([project(':some-service'),]) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+//        testImplementation "core.framework:core-ng-test:${coreNGVersion}"
+    }
+}
+
+project(':some-service') {
+    dependencies {
+        implementation project(':some-interface')
+//        runtimeOnly 'mysql:mysql-connector-java:8.0.17'
+    }
+}

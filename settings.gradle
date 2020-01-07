@@ -1,0 +1,5 @@
+rootProject.name = 'some-project'
+include 'some-service','some-interface'
+includeBuild '../core-ng'
+
+
