@@ -13,5 +13,6 @@ public class SomeServiceApp extends App {
         load(new SystemModule("sys.properties"));
         http().httpPort(8082);
         load(new OrderModule());
+        load(new CustomerModule());
     }
 }

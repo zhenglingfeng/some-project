@@ -1,13 +1,14 @@
-package app.some.api.order;
+package app.some.api.customer;
 
 import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;
 
-public class OrderView {
+public class CustomerView {
     @NotNull
+    @NotBlank
     @Property(name = "id")
-    public Long id;
+    public String id;
 
     @NotNull
     @NotBlank
