@@ -15,7 +15,7 @@ import core.framework.inject.Inject;
 
 import java.util.stream.Collectors;
 
-public class BackOfficeService {
+public class BOOrderService {
     @Inject
     OrderWebService orderWebService;
 

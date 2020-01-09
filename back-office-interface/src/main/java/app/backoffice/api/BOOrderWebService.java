@@ -13,7 +13,7 @@ import core.framework.api.web.service.Path;
 import core.framework.api.web.service.PathParam;
 import core.framework.api.web.service.ResponseStatus;
 
-public interface BackOfficeWebService {
+public interface BOOrderWebService {
     @GET
     @Path("/back-office/order/:id")
     BOOrderView get(@PathParam("id") Long id);
