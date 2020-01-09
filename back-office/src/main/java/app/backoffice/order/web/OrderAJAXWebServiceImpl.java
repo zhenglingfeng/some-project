@@ -11,7 +11,7 @@ import core.framework.inject.Inject;
 
 public class OrderAJAXWebServiceImpl implements OrderAJAXWebService {
     @Inject
-    private OrderService orderService;
+    OrderService orderService;
 
     @Override
     public OrderAJAXView get(Long id) {

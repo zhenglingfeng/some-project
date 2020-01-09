@@ -1,12 +1,12 @@
 package app;
 
-import app.backoffice.order.demo.Brush;
-import app.backoffice.order.demo.Painter;
-import app.backoffice.order.domain.Order;
-import app.backoffice.order.service.BOOrderService;
-import app.backoffice.order.service.OrderService;
-import app.backoffice.order.web.BOOrderWebServiceImpl;
-import app.backoffice.order.web.OrderWebServiceImpl;
+import app.some.order.demo.Brush;
+import app.some.order.demo.Painter;
+import app.some.order.domain.Order;
+import app.some.order.service.BOOrderService;
+import app.some.order.service.OrderService;
+import app.some.order.web.BOOrderWebServiceImpl;
+import app.some.order.web.OrderWebServiceImpl;
 import app.some.api.BOOrderWebService;
 import app.some.api.OrderWebService;
 import core.framework.module.Module;

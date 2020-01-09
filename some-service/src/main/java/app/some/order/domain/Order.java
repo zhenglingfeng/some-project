@@ -1,4 +1,4 @@
-package app.backoffice.order.domain;
+package app.some.order.domain;
 
 import core.framework.api.validate.NotBlank;
 import core.framework.api.validate.NotNull;

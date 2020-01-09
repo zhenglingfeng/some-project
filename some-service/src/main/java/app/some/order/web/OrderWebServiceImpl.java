@@ -1,6 +1,6 @@
-package app.backoffice.order.web;
+package app.some.order.web;
 
-import app.backoffice.order.service.OrderService;
+import app.some.order.service.OrderService;
 import app.some.api.OrderWebService;
 import app.some.api.order.CreateOrderRequest;
 import app.some.api.order.OrderView;
@@ -11,7 +11,7 @@ import core.framework.inject.Inject;
 
 public class OrderWebServiceImpl implements OrderWebService {
     @Inject
-    private OrderService orderService;
+    OrderService orderService;
 
     @Override
     public OrderView get(Long id) {

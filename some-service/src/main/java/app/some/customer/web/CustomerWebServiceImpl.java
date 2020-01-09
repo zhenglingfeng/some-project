@@ -10,7 +10,7 @@ import core.framework.inject.Inject;
 
 public class CustomerWebServiceImpl implements CustomerWebService {
     @Inject
-    private CustomerService customerService;
+    CustomerService customerService;
 
     @Override
     public void create(CreateCustomerRequest request) {

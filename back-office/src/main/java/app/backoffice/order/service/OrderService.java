@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class OrderService {
     @Inject
-    private BOOrderWebService orderWebService;
+    BOOrderWebService orderWebService;
 
     public OrderAJAXView get(Long id) {
         BOOrderView orderView = orderWebService.get(id);

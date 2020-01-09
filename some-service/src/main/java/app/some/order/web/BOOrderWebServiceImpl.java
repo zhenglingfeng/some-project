@@ -1,6 +1,6 @@
-package app.backoffice.order.web;
+package app.some.order.web;
 
-import app.backoffice.order.service.BOOrderService;
+import app.some.order.service.BOOrderService;
 import app.some.api.BOOrderWebService;
 import app.some.api.order.BOCreateOrderRequest;
 import app.some.api.order.BOOrderView;
@@ -11,7 +11,7 @@ import core.framework.inject.Inject;
 
 public class BOOrderWebServiceImpl implements BOOrderWebService {
     @Inject
-    private BOOrderService orderService;
+    BOOrderService orderService;
 
     @Override
     public BOOrderView get(Long id) {

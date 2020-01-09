@@ -1,12 +1,11 @@
-package app.backoffice.order.service;
+package app.some.order.service;
 
-import app.some.api.order.CreateOrderRequest;
-import app.some.api.order.OrderView;
-import app.some.api.order.SearchOrderRequest;
-import app.some.api.order.SearchOrderResponse;
-import app.some.api.order.UpdateOrderRequest;
-import app.backoffice.order.demo.Painter;
-import app.backoffice.order.domain.Order;
+import app.some.order.domain.Order;
+import app.some.api.order.BOCreateOrderRequest;
+import app.some.api.order.BOOrderView;
+import app.some.api.order.BOSearchOrderRequest;
+import app.some.api.order.BOSearchOrderResponse;
+import app.some.api.order.BOUpdateOrderRequest;
 import core.framework.db.Database;
 import core.framework.db.Query;
 import core.framework.db.Repository;
@@ -17,21 +16,18 @@ import core.framework.web.exception.NotFoundException;
 
 import java.util.stream.Collectors;
 
-public class OrderService {
+public class BOOrderService {
     @Inject
-    private Painter painter;
+    Database database;
     @Inject
-    private Database database;
-    @Inject
-    private Repository<Order> orderRepository;
-    
-    public OrderView get(Long id) {
-        painter.draw();
+    Repository<Order> orderRepository;
+
+    public BOOrderView get(Long id) {
         Order order = orderRepository.get(id).orElseThrow(() -> new NotFoundException("order not found, id=" + id));
         return view(order);
     }
 
-    public OrderView create(CreateOrderRequest request) {
+    public BOOrderView create(BOCreateOrderRequest request) {
         Order order = new Order();
         order.remark = request.remark;
         order.id = orderRepository.insert(order).orElseThrow();
@@ -40,15 +36,15 @@ public class OrderService {
         return view(order);
     }
 
-    public OrderView update(Long id, UpdateOrderRequest request) {
+    public BOOrderView update(Long id, BOUpdateOrderRequest request) {
         Order order = orderRepository.get(id).orElseThrow(() -> new NotFoundException("order not found, id=" + id));
         order.remark = request.remark;
         orderRepository.partialUpdate(order);
         return view(order);
     }
 
-    public SearchOrderResponse search(SearchOrderRequest request) {
-        SearchOrderResponse result = new SearchOrderResponse();
+    public BOSearchOrderResponse search(BOSearchOrderRequest request) {
+        BOSearchOrderResponse result = new BOSearchOrderResponse();
         Query<Order> query = orderRepository.select();
         query.skip(request.skip);
         query.limit(request.limit);
@@ -60,8 +56,8 @@ public class OrderService {
         return result;
     }
 
-    private OrderView view(Order order) {
-        OrderView result = new OrderView();
+    private BOOrderView view(Order order) {
+        BOOrderView result = new BOOrderView();
         result.id = order.id;
         result.remark = order.remark;
         return result;
