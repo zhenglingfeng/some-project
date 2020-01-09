@@ -6,12 +6,12 @@ import app.backoffice.api.order.OrderAJAXView;
 import app.backoffice.api.order.SearchOrderAJAXRequest;
 import app.backoffice.api.order.SearchOrderAJAXResponse;
 import app.backoffice.api.order.UpdateOrderAJAXRequest;
-import app.backoffice.order.service.OrderAJAXService;
+import app.backoffice.order.service.OrderService;
 import core.framework.inject.Inject;
 
 public class OrderAJAXWebServiceImpl implements OrderAJAXWebService {
     @Inject
-    private OrderAJAXService orderService;
+    private OrderService orderService;
 
     @Override
     public OrderAJAXView get(Long id) {

@@ -15,7 +15,7 @@ import core.framework.inject.Inject;
 
 import java.util.stream.Collectors;
 
-public class OrderAJAXService {
+public class OrderService {
     @Inject
     private BOOrderWebService orderWebService;
 
