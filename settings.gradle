@@ -3,7 +3,6 @@ include 'some-service',
         'some-interface',
         'back-office',
         'web-site',
-        'some-async'
+        'some-async',
+        'back-office-interface'
 includeBuild '../core-ng'
-include 'back-office-interface'
-

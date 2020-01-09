@@ -1,12 +1,12 @@
 package app.backoffice.order.web;
 
-import app.backoffice.api.BOOrderWebService;
-import app.backoffice.api.order.BOCreateOrderRequest;
-import app.backoffice.api.order.BOOrderView;
-import app.backoffice.api.order.BOSearchOrderRequest;
-import app.backoffice.api.order.BOSearchOrderResponse;
-import app.backoffice.api.order.BOUpdateOrderRequest;
 import app.backoffice.order.service.BOOrderService;
+import app.some.api.BOOrderWebService;
+import app.some.api.order.BOCreateOrderRequest;
+import app.some.api.order.BOOrderView;
+import app.some.api.order.BOSearchOrderRequest;
+import app.some.api.order.BOSearchOrderResponse;
+import app.some.api.order.BOUpdateOrderRequest;
 import core.framework.inject.Inject;
 
 public class BOOrderWebServiceImpl implements BOOrderWebService {

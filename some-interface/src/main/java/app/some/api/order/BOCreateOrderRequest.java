@@ -1,4 +1,4 @@
-package app.backoffice.api.order;
+package app.some.api.order;
 
 import core.framework.api.json.Property;
 import core.framework.api.validate.NotBlank;

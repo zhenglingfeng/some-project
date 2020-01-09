@@ -1,4 +1,4 @@
-package app.backoffice.api.order;
+package app.some.api.order;
 
 import core.framework.api.validate.NotNull;
 import core.framework.api.web.service.QueryParam;

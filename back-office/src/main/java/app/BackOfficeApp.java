@@ -12,6 +12,6 @@ public class BackOfficeApp extends App {
         http().httpsPort(8443);
         load(new SystemModule("sys.properties"));
         http().httpPort(8083);
-        load(new BOOrderModule());
+        load(new OrderAJAXModule());
     }
 }
