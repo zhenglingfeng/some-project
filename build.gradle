@@ -21,12 +21,10 @@ configure(subprojects.findAll { it.name.matches('.*-interface') }) {
     }
 }
 
-configure([project(':some-service'),]) {
+configure([project(':some-service'),project(':back-office'),project(':web-site')]) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         implementation "core.framework:core-ng:${coreNGVersion}"
-        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
-        implementation 'de.bwaldvogel:mongo-java-server:1.23.0'
 //        testImplementation "core.framework:core-ng-test:${coreNGVersion}"
     }
 }
@@ -34,6 +32,19 @@ configure([project(':some-service'),]) {
 project(':some-service') {
     dependencies {
         implementation project(':some-interface')
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+        implementation 'de.bwaldvogel:mongo-java-server:1.23.0'
         runtimeOnly 'mysql:mysql-connector-java:8.0.17'
+    }
+}
+
+project(':back-office') {
+    dependencies {
+        implementation project(':some-interface')
+    }
+}
+
+project(':web-site') {
+    dependencies {
     }
 }

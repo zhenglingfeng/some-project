@@ -6,13 +6,14 @@ import core.framework.module.SystemModule;
 /**
  * @author richard
  */
-public class SomeServiceApp extends App {
+public class WebSiteApp extends App {
     @Override
     protected void initialize() {
         load(new SystemModule("sys.properties"));
-        http().httpsPort(8442);
-        http().httpPort(8082);
-        load(new OrderModule());
-        load(new CustomerModule());
+        http().gzip();
+        http().httpsPort(8444);
+        site().security();
+//        log().maskFields("password");
+        load(new WebModule());
     }
 }

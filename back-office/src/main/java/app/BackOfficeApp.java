@@ -6,13 +6,12 @@ import core.framework.module.SystemModule;
 /**
  * @author richard
  */
-public class SomeServiceApp extends App {
+public class BackOfficeApp extends App {
     @Override
     protected void initialize() {
+        http().httpsPort(8443);
         load(new SystemModule("sys.properties"));
-        http().httpsPort(8442);
-        http().httpPort(8082);
-        load(new OrderModule());
-        load(new CustomerModule());
+        http().httpPort(8083);
+        load(new BackOfficeModule());
     }
 }
