@@ -11,25 +11,25 @@ import core.framework.inject.Inject;
 
 public class BOOrderWebServiceImpl implements BOOrderWebService {
     @Inject
-    BOOrderService BOOrderService;
+    private BOOrderService orderService;
 
     @Override
     public BOOrderView get(Long id) {
-        return BOOrderService.get(id);
+        return orderService.get(id);
     }
 
     @Override
     public void create(BOCreateOrderRequest request) {
-        BOOrderService.create(request);
+        orderService.create(request);
     }
 
     @Override
     public void update(Long id, BOUpdateOrderRequest request) {
-        BOOrderService.update(id, request);
+        orderService.update(id, request);
     }
 
     @Override
     public BOSearchOrderResponse search(BOSearchOrderRequest request) {
-        return BOOrderService.search(request);
+        return orderService.search(request);
     }
 }

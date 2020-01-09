@@ -11,7 +11,7 @@ import core.framework.inject.Inject;
 
 public class OrderWebServiceImpl implements OrderWebService {
     @Inject
-    OrderService orderService;
+    private OrderService orderService;
 
     @Override
     public OrderView get(Long id) {

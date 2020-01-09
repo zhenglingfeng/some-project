@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 public class CustomerService {
     @Inject
-    MongoCollection<Customer> customerCollection;
+    private MongoCollection<Customer> customerCollection;
 
     public void create(CreateCustomerRequest request) {
         Customer customer = new Customer();

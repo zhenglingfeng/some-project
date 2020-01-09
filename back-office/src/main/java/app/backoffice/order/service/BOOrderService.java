@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class BOOrderService {
     @Inject
-    OrderWebService orderWebService;
+    private OrderWebService orderWebService;
 
     public BOOrderView get(Long id) {
         OrderView orderView = orderWebService.get(id);
@@ -48,7 +48,7 @@ public class BOOrderService {
         return result;
     }
 
-    public BOOrderView view(OrderView orderView) {
+    private BOOrderView view(OrderView orderView) {
         BOOrderView boOrderView = new BOOrderView();
         boOrderView.id = orderView.id;
         boOrderView.remark = orderView.remark;

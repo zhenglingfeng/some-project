@@ -19,11 +19,11 @@ import java.util.stream.Collectors;
 
 public class OrderService {
     @Inject
-    Painter painter;
+    private Painter painter;
     @Inject
-    Database database;
+    private Database database;
     @Inject
-    Repository<Order> orderRepository;
+    private Repository<Order> orderRepository;
     
     public OrderView get(Long id) {
         painter.draw();
@@ -60,7 +60,7 @@ public class OrderService {
         return result;
     }
 
-    public OrderView view(Order order) {
+    private OrderView view(Order order) {
         OrderView result = new OrderView();
         result.id = order.id;
         result.remark = order.remark;

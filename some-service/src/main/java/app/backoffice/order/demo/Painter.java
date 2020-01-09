@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 public class Painter {
     private final Logger logger = LoggerFactory.getLogger(Painter.class);
     @Inject
-    Brush brush;
+    private Brush brush;
 
     public void draw() {
         logger.warn("drawing picture...");
