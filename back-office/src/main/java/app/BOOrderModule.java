@@ -6,7 +6,7 @@ import app.backoffice.order.web.BOOrderWebServiceImpl;
 import app.some.api.OrderWebService;
 import core.framework.module.Module;
 
-public class BackOfficeModule extends Module {
+public class BOOrderModule extends Module {
     @Override
     protected void initialize() {
         loadProperties("app.properties");
