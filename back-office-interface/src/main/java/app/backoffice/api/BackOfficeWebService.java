@@ -1,10 +1,10 @@
-package app.some.api;
+package app.backoffice.api;
 
-import app.some.api.backoffice.BOCreateOrderRequest;
-import app.some.api.backoffice.BOOrderView;
-import app.some.api.backoffice.BOSearchOrderRequest;
-import app.some.api.backoffice.BOSearchOrderResponse;
-import app.some.api.backoffice.BOUpdateOrderRequest;
+import app.backoffice.api.order.BOCreateOrderRequest;
+import app.backoffice.api.order.BOOrderView;
+import app.backoffice.api.order.BOSearchOrderRequest;
+import app.backoffice.api.order.BOSearchOrderResponse;
+import app.backoffice.api.order.BOUpdateOrderRequest;
 import core.framework.api.http.HTTPStatus;
 import core.framework.api.web.service.GET;
 import core.framework.api.web.service.POST;

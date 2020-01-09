@@ -41,6 +41,7 @@ project(':some-service') {
 project(':back-office') {
     dependencies {
         implementation project(':some-interface')
+        implementation project(':back-office-interface')
     }
 }
 

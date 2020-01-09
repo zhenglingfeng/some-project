@@ -1,12 +1,12 @@
-package app.some.order.service;
+package app.backoffice.order.service;
 
 import app.some.api.order.CreateOrderRequest;
 import app.some.api.order.OrderView;
 import app.some.api.order.SearchOrderRequest;
 import app.some.api.order.SearchOrderResponse;
 import app.some.api.order.UpdateOrderRequest;
-import app.some.order.demo.Painter;
-import app.some.order.domain.Order;
+import app.backoffice.order.demo.Painter;
+import app.backoffice.order.domain.Order;
 import core.framework.db.Database;
 import core.framework.db.Query;
 import core.framework.db.Repository;

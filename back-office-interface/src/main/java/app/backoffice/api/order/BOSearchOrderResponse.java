@@ -1,4 +1,4 @@
-package app.some.api.backoffice;
+package app.backoffice.api.order;
 
 import core.framework.api.json.Property;
 

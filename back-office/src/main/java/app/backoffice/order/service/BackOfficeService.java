@@ -1,11 +1,11 @@
-package app.some.order.service;
+package app.backoffice.order.service;
 
+import app.backoffice.api.order.BOCreateOrderRequest;
+import app.backoffice.api.order.BOOrderView;
+import app.backoffice.api.order.BOSearchOrderRequest;
+import app.backoffice.api.order.BOSearchOrderResponse;
+import app.backoffice.api.order.BOUpdateOrderRequest;
 import app.some.api.OrderWebService;
-import app.some.api.backoffice.BOCreateOrderRequest;
-import app.some.api.backoffice.BOOrderView;
-import app.some.api.backoffice.BOSearchOrderRequest;
-import app.some.api.backoffice.BOSearchOrderResponse;
-import app.some.api.backoffice.BOUpdateOrderRequest;
 import app.some.api.order.CreateOrderRequest;
 import app.some.api.order.OrderView;
 import app.some.api.order.SearchOrderRequest;

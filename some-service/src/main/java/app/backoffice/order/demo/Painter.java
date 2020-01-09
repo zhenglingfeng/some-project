@@ -1,4 +1,4 @@
-package app.some.order.demo;
+package app.backoffice.order.demo;
 
 import core.framework.inject.Inject;
 import org.slf4j.Logger;

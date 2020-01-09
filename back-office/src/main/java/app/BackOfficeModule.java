@@ -1,9 +1,9 @@
 package app;
 
-import app.some.api.BackOfficeWebService;
+import app.backoffice.api.BackOfficeWebService;
+import app.backoffice.order.service.BackOfficeService;
+import app.backoffice.order.web.BackOfficeWebServiceImpl;
 import app.some.api.OrderWebService;
-import app.some.order.service.BackOfficeService;
-import app.some.order.web.BackOfficeWebServiceImpl;
 import core.framework.module.Module;
 
 public class BackOfficeModule extends Module {

@@ -1,12 +1,12 @@
-package app.some.order.web;
+package app.backoffice.order.web;
 
+import app.backoffice.order.service.OrderService;
 import app.some.api.OrderWebService;
 import app.some.api.order.CreateOrderRequest;
 import app.some.api.order.OrderView;
 import app.some.api.order.SearchOrderRequest;
 import app.some.api.order.SearchOrderResponse;
 import app.some.api.order.UpdateOrderRequest;
-import app.some.order.service.OrderService;
 import core.framework.inject.Inject;
 
 public class OrderWebServiceImpl implements OrderWebService {

@@ -2,6 +2,8 @@ rootProject.name = 'some-project'
 include 'some-service',
         'some-interface',
         'back-office',
-        'web-site'
+        'web-site',
+        'some-async'
 includeBuild '../core-ng'
+include 'back-office-interface'
 
