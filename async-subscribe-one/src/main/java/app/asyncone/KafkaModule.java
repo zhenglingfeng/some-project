@@ -15,8 +15,8 @@ public class KafkaModule extends Module {
         kafka().uri("kafka://localhost:9092");
         kafka().maxProcessTime(Duration.ofMinutes(30));
         kafka().longConsumerLagThreshold(Duration.ofSeconds(60));
-        kafka().groupId("my-group");
         kafka().subscribe("topic", OrderCreatedMessage.class, bind(OrderCreatedMessageHandler.class));
+        kafka().groupId("my-group");
 //        kafka().subscribe("topic2", OrderCreateMessage.class, (String key, OrderCreateMessage message) -> {
 //        });
     }

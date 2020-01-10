@@ -18,6 +18,6 @@ public class KafkaModule extends Module {
         kafka().groupId("my-group");
         OrderCreatedMessage message = new OrderCreatedMessage();
         message.remark = "test" + LocalDateTime.now();
-        kafka().publish("topic", OrderCreatedMessage.class).publish("topic", "key", message);
+        kafka().publish("topic", OrderCreatedMessage.class);
     }
 }

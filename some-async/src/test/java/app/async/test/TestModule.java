@@ -1,5 +1,6 @@
 package app.async.test;
 
+import app.SomeAsyncApp;
 import app.async.kafka.OrderCreatedMessage;
 import app.async.test.scheduler.TestJob;
 import core.framework.scheduler.Job;
@@ -14,11 +15,7 @@ import java.time.ZoneId;
 public class TestModule extends AbstractTestModule {
     @Override
     protected void initialize() {
-        configureKafka();
-//        log().appendToKafka("localhost:9092");
-        configureHTTP();
-        configureJob();
-        configureExecutor();
+        load(new SomeAsyncApp());
     }
 
     private void configureExecutor() {

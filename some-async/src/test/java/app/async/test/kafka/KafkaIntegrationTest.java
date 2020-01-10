@@ -20,9 +20,9 @@ class KafkaIntegrationTest extends IntegrationTest {
     @Test
     void publish() throws InterruptedException {
         OrderCreatedMessage message = new OrderCreatedMessage();
-        message.remark = "test";
+        message.remark = "remark";
         publisher.publish("topic", "key", message);
 
-        verify(publisher).publish(eq("topic"), eq("key"), argThat(arg -> "test".equals(arg.remark)));
+        verify(publisher).publish(eq("topic"), eq("key"), argThat(arg -> "remark".equals(arg.remark)));
     }
 }
