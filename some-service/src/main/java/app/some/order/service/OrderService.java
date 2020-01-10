@@ -1,5 +1,6 @@
 package app.some.order.service;
 
+import app.ErrorCodes;
 import app.some.api.order.CreateOrderRequest;
 import app.some.api.order.OrderView;
 import app.some.api.order.SearchOrderRequest;
@@ -27,7 +28,7 @@ public class OrderService {
     
     public OrderView get(Long id) {
         painter.draw();
-        Order order = orderRepository.get(id).orElseThrow(() -> new NotFoundException("order not found, id=" + id));
+        Order order = orderRepository.get(id).orElseThrow(() -> new NotFoundException("Book not found, id=" + id, ErrorCodes.ORDER_NOT_FOUND));
         return view(order);
     }
 
@@ -82,6 +83,6 @@ public class OrderService {
     }
 
     private void insertRow(String remark) {
-        database.execute("INSERT INTO tb_orders (remark) VALUES (?)", remark);
+        database.execute("INSERT INTO orders (remark) VALUES (?)", remark);
     }
 }

@@ -78,6 +78,6 @@ public class BOOrderService {
     }
 
     private void insertRow(String remark) {
-        database.execute("INSERT INTO tb_orders (remark) VALUES (?)", remark);
+        database.execute("INSERT INTO orders (remark) VALUES (?)", remark);
     }
 }

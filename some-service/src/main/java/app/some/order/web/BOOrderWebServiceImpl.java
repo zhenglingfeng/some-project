@@ -1,12 +1,12 @@
 package app.some.order.web;
 
-import app.some.order.service.BOOrderService;
 import app.some.api.BOOrderWebService;
 import app.some.api.order.BOCreateOrderRequest;
 import app.some.api.order.BOOrderView;
 import app.some.api.order.BOSearchOrderRequest;
 import app.some.api.order.BOSearchOrderResponse;
 import app.some.api.order.BOUpdateOrderRequest;
+import app.some.order.service.BOOrderService;
 import core.framework.inject.Inject;
 
 public class BOOrderWebServiceImpl implements BOOrderWebService {
