@@ -18,6 +18,5 @@ class KafkaIntegrationTest extends IntegrationTest {
         OrderCreatedMessage message = new OrderCreatedMessage();
         message.remark = "remark";
         publisher.publish("key", message);
-        publisher.publish("key", message);
     }
 }

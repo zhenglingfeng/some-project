@@ -1,6 +1,5 @@
 package app.async.test;
 
-import app.SomeAsyncApp;
 import app.async.kafka.OrderCreatedMessage;
 import app.async.test.scheduler.TestJob;
 import core.framework.scheduler.Job;
@@ -15,7 +14,7 @@ import java.time.ZoneId;
 public class TestModule extends AbstractTestModule {
     @Override
     protected void initialize() {
-        load(new SomeAsyncApp());
+        configureKafka();
     }
 
     private void configureExecutor() {
@@ -29,10 +28,8 @@ public class TestModule extends AbstractTestModule {
     }
 
     private void configureKafka() {
-        kafka().uri("kafka://localhost:9092");
-        kafka().maxProcessTime(Duration.ofMinutes(30));
-        kafka().longConsumerLagThreshold(Duration.ofSeconds(60));
-        kafka().groupId("my-group");
+        loadProperties("sys.properties");
+        kafka().uri(requiredProperty("sys.kafka.uri"));
         kafka().publish("topic", OrderCreatedMessage.class);
     }
 
