@@ -13,6 +13,6 @@ public class OrderCreatedMessageHandler implements MessageHandler<OrderCreatedMe
 
     @Override
     public void handle(String key, OrderCreatedMessage messages) {
-        logger.info("{}-{}", key, messages.remark);
+        logger.info("{}", messages.remark);
     }
 }
