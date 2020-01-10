@@ -5,7 +5,7 @@ import core.framework.mongo.Field;
 import core.framework.mongo.Id;
 import org.bson.types.ObjectId;
 
-@Collection(name = "col_customers")
+@Collection(name = "customers")
 public class Customer {
     @Id
     public ObjectId id;

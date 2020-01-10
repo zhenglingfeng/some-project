@@ -6,7 +6,7 @@ import core.framework.db.Column;
 import core.framework.db.PrimaryKey;
 import core.framework.db.Table;
 
-@Table(name = "tb_orders")
+@Table(name = "orders")
 public class Order {
     @PrimaryKey(autoIncrement = true)
     @Column(name = "id")

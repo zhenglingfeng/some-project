@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 public class KafkaModule extends Module {
     @Override
     protected void initialize() {
-        kafka().uri("kafka://localhost:9092");
+        loadProperties("sys.properties");
+        kafka().uri(requiredProperty("sys.kafka.uri"));
 //        kafka().maxProcessTime(Duration.ofMinutes(30));
 //        kafka().longConsumerLagThreshold(Duration.ofSeconds(60));
 //        kafka().groupId("my-group");
@@ -20,10 +21,6 @@ public class KafkaModule extends Module {
         MessagePublisher<OrderCreatedMessage> publisher = kafka().publish("topic", OrderCreatedMessage.class);
         for (int i = 0; i < 10; i++) {
             message.remark = "test" + LocalDateTime.now();
-            publisher.publish("key" + i, message);
-        }
-        for (int i = 0; i < 10; i++) {
-            message.remark = "remark" + LocalDateTime.now();
             publisher.publish("key" + i, message);
         }
     }

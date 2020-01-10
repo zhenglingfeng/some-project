@@ -10,7 +10,8 @@ import core.framework.module.Module;
 public class KafkaModule extends Module {
     @Override
     protected void initialize() {
-        kafka().uri("kafka://localhost:9092");
+        loadProperties("sys.properties");
+        kafka().uri(requiredProperty("sys.kafka.uri"));
 //        kafka().maxProcessTime(Duration.ofMinutes(30));
 //        kafka().longConsumerLagThreshold(Duration.ofSeconds(60));
 //        kafka().groupId("my-group");
