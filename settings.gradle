@@ -3,6 +3,9 @@ include 'some-service',
         'some-interface',
         'back-office',
         'web-site',
+        'back-office-interface',
         'some-async',
-        'back-office-interface'
+        'async-interface',
+        'async-subscribe-one',
+        'async-subscribe-two'
 includeBuild '../core-ng'

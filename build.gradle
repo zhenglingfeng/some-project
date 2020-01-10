@@ -21,11 +21,12 @@ configure(subprojects.findAll { it.name.matches('.*-interface') }) {
     }
 }
 
-configure([project(':some-service'),project(':back-office'),project(':web-site')]) {
+configure([project(':some-service'),project(':back-office'),project(':web-site'),project(':some-async')
+           ,project(':async-subscribe-one'),project(':async-subscribe-two')]) {
     apply from: file("${rootDir}/gradle/app.gradle")
     dependencies {
         implementation "core.framework:core-ng:${coreNGVersion}"
-//        testImplementation "core.framework:core-ng-test:${coreNGVersion}"
+        testImplementation "core.framework:core-ng-test:${coreNGVersion}"
     }
 }
 
@@ -47,5 +48,23 @@ project(':back-office') {
 
 project(':web-site') {
     dependencies {
+    }
+}
+
+project(':some-async') {
+    dependencies {
+        implementation project(':async-interface')
+    }
+}
+
+project(':async-subscribe-one') {
+    dependencies {
+        implementation project(':async-interface')
+    }
+}
+
+project(':async-subscribe-two') {
+    dependencies {
+        implementation project(':async-interface')
     }
 }
