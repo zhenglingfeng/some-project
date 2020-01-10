@@ -15,7 +15,7 @@ subprojects {
 }
 
 def coreNGVersion = '7.2.1'
-
+def hsqlVersion = '2.5.0'
 
 configure(subprojects.findAll { it.name.matches('.*-interface') }) {
     dependencies {
@@ -57,6 +57,7 @@ project(':some-service') {
         implementation "core.framework:core-ng-mongo:${coreNGVersion}"
         implementation 'de.bwaldvogel:mongo-java-server:1.23.0'
         runtimeOnly 'mysql:mysql-connector-java:8.0.17'
+        testRuntimeOnly "org.hsqldb:hsqldb:${hsqlVersion}"
     }
 }
 

@@ -11,7 +11,8 @@ public class CustomerModule extends Module {
     @Override
     protected void initialize() {
         MongoConfig mongo = config(MongoConfig.class);
-        mongo.uri("mongodb://localhost:27017/test");
+        loadProperties("sys.properties");
+        mongo.uri(requiredProperty("sys.mongo.uri"));
         mongo.collection(Customer.class);
         bind(CustomerService.class);
         api().service(CustomerWebService.class, bind(CustomerWebServiceImpl.class));

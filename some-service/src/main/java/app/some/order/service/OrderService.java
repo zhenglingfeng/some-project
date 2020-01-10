@@ -28,7 +28,7 @@ public class OrderService {
     
     public OrderView get(Long id) {
         painter.draw();
-        Order order = orderRepository.get(id).orElseThrow(() -> new NotFoundException("Book not found, id=" + id, ErrorCodes.ORDER_NOT_FOUND));
+        Order order = orderRepository.get(id).orElseThrow(() -> new NotFoundException("Order not found, orderId=" + id, ErrorCodes.ORDER_NOT_FOUND));
         return view(order);
     }
 
