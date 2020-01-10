@@ -30,7 +30,9 @@ public class TestModule extends AbstractTestModule {
     private void configureKafka() {
         loadProperties("sys.properties");
         kafka().uri(requiredProperty("sys.kafka.uri"));
-        kafka().publish("topic", OrderCreatedMessage.class);
+        OrderCreatedMessage message = new OrderCreatedMessage();
+        message.remark = "value";
+        kafka().publish("topic", OrderCreatedMessage.class).publish("key", message);
     }
 
     private void configureJob() {

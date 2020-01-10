@@ -7,5 +7,7 @@ include 'some-service',
         'some-async',
         'async-interface',
         'async-subscribe-one',
-        'async-subscribe-two'
-includeBuild '../core-ng'
+        'async-subscribe-two',
+        'some-db-migration',
+        'some-mongo-migration'
+

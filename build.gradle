@@ -4,20 +4,41 @@ subprojects {
     version = '1.0.0'
 
     repositories {
-        mavenLocal()
-        maven
-                {
-                    url "http://maven.aliyun.com/nexus/content/groups/public/"
-                }
+        maven {
+            url 'https://neowu.github.io/maven-repo/'
+//            url "http://maven.aliyun.com/nexus/content/groups/public/"
+            content {
+                includeGroupByRegex 'core\\.framework.*'
+            }
+        }
     }
 }
 
-def coreNGVersion = '7.3.0'
+def coreNGVersion = '7.2.1'
 
 
 configure(subprojects.findAll { it.name.matches('.*-interface') }) {
     dependencies {
         implementation "core.framework:core-ng-api:${coreNGVersion}"
+    }
+}
+
+configure(subprojects.findAll { it.name.endsWith('-db-migration') }) {
+    apply from: file("${rootDir}/gradle/db-migration.gradle")
+
+    dependencies {
+        runtimeOnly 'mysql:mysql-connector-java:8.0.17'
+    }
+}
+
+configure(subprojects.findAll { it.name.endsWith('-mongo-migration') }) {
+    apply from: file("${rootDir}/gradle/app.gradle")
+    dependencies {
+        implementation "core.framework:core-ng:${coreNGVersion}"
+        implementation "core.framework:core-ng-mongo:${coreNGVersion}"
+    }
+    tasks.register('mongoMigrate') {
+        dependsOn run
     }
 }
 
